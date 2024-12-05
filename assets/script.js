@@ -46,13 +46,12 @@ const endpoint = 'https://jsonplaceholder.typicode.com/photos?_limit=6';
 // ]
 
 
-
+const album = document.querySelector('.album')
 
   axios.get(endpoint)
     .then(response =>{
-      response.data.forEach(picture => albumPic(picture))
-      
-      
+      album.innerHTML = ''
+      response.data.forEach(picture => albumPic(picture))      
     })
 
 
@@ -61,13 +60,13 @@ const endpoint = 'https://jsonplaceholder.typicode.com/photos?_limit=6';
 function albumPic(picture){
   const {title, url} = picture;
 
-  document.querySelector('.album') += <div class="mycard d-flex">
+ album.innerHTML += `<div class="mycard d-flex">
   <div class="mypic">
-    <img src="./assets/img/pasticciotto.jpg" alt="dolce">
+  <img src="${url}" alt="dolce">    
     <span><img src="./assets/img/pin.svg" alt="pin"></span>
   </div>
-  <div class="mytext">`${title}`</div>
-</div>;
+  <div class="mytext">${title}</div>
+</div>`;
   console.log(picture);
   
 }

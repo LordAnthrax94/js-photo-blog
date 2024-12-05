@@ -10,9 +10,10 @@ header{
 
 .head{  
   font-style: italic;
-  font-size: 3rem;
+  font-size: 5rem;
   text-align: center;
   align-self: center;
+  font-weight: bold;
 }
 
 /* main{
@@ -59,4 +60,5 @@ header{
 
 .mytext{
   margin-top: 10px;
+  font-style: italic;
 }

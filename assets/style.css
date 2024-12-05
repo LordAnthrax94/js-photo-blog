@@ -1,0 +1,19 @@
+body{
+  font-family: "Roboto", serif;
+}
+
+header{
+  background-image: url(./img/wall.png);
+  height: 100px;
+}
+
+.head{  
+  font-style: italic;
+  font-size: 3rem;
+  text-align: center;
+  align-self: center;
+}
+
+main{
+  background-image: url(./img/cork.png);
+}

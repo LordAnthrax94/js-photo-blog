@@ -66,7 +66,5 @@ function albumPic(picture){
     <span><img src="./assets/img/pin.svg" alt="pin"></span>
   </div>
   <div class="mytext">${title}</div>
-</div>`;
-  console.log(picture);
-  
+</div>`;  
 }

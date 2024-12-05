@@ -24,6 +24,7 @@ header{
 
 
 .mycard{
+  position: relative;
   background-color: white;
   font-weight: bold; 
   flex-direction: column; 
@@ -40,9 +41,9 @@ header{
   background-color: white;  
 } */
 
-.mypic{
+/* .mypic{
   position: relative;
-}
+} */
 
 .mypic img{  
   width: 100%;
@@ -54,11 +55,12 @@ header{
 .mypic span img{
   width: 50px;
   position: absolute;
-  top: -20;
-  left: 165;  
+  top: -10;
+  left: 170;    
 }
 
 .mytext{
   margin-top: 10px;
   font-style: italic;
+  text-transform: capitalize;
 }

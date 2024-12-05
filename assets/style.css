@@ -1,5 +1,6 @@
 body{
   font-family: "Roboto", serif;
+  background-image: url(./img/cork.png);
 }
 
 header{
@@ -14,10 +15,10 @@ header{
   align-self: center;
 }
 
-main{
+/* main{
   background-image: url(./img/cork.png);
   object-fit: cover;
-}
+} */
 
 
 
@@ -29,18 +30,33 @@ main{
   text-align: center;
   width: 400px;
   height: auto;
-  padding: 10px;
+  padding: 5px;
   margin: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* .mytext{
   background-color: white;  
 } */
 
+.mypic{
+  position: relative;
+}
+
 .mypic img{  
   width: 100%;
   padding: 10px;
   height: auto;  
-  object-fit: cover; 
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  object-fit: cover;    
+}
+
+.mypic span img{
+  width: 50px;
+  position: absolute;
+  top: -20;
+  left: 165;  
+}
+
+.mytext{
+  margin-top: 10px;
 }

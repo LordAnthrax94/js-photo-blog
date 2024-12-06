@@ -44,6 +44,10 @@ header{
   z-index: 2;  
 }
 
+.mycard:hover .pin{
+  display: none;
+}
+
 /* .mytext{
   background-color: white;  
 } */
@@ -63,7 +67,7 @@ header{
   width: 50px;
   position: absolute;
   top: -10;
-  left: 175;    
+  left: 175;      
 }
 
 .mytext{
@@ -86,5 +90,17 @@ header{
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
-  z-index: 3;
+  z-index: 4;
 }
+
+.selcard{
+  position: absolute;
+  flex-direction: column;
+  top: 300;
+  left: 750;
+}
+
+/* .selpic img{  
+  width: 300px;
+  height: 300px;
+} */

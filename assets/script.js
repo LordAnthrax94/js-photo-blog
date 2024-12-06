@@ -50,21 +50,26 @@ const album = document.querySelector('.album')
 
 const overlay = document.getElementById('overlay');
 const btn = document.querySelector('.btn')
+const selpic = document.querySelector('.selpic')
 
   axios.get(endpoint)
     .then(response =>{
       album.innerHTML = ''
       response.data.forEach(picture => albumPic(picture))
-      const cardPics = document.querySelectorAll('.mypic') 
-        for(let i = 0; i < cardPics.length; i++){
-        cardPics[i].addEventListener('click', function(){
-          overlay.classList.remove('d-none');
-          
-        })
-        btn.addEventListener('click', function(){
-          overlay.classList.add('d-none')
-        })
-        } 
+      
+      const cardPics = document.querySelectorAll('.mypic')
+
+        // for(let i = 0; i < cardPics.length; i++){
+        //   cardPics[i].addEventListener('click', function(){
+        //     const {url} = picture;
+        //     overlay.classList.remove('d-none');
+        //     selpic.innerHTML = ` <img src="${url}" alt="dolce">`
+            
+        // })
+        // btn.addEventListener('click', function(){
+        //   btn.classList.add('d-none')
+        // })
+        // } 
       console.log(cardPics);    
     })
 
@@ -77,7 +82,7 @@ function albumPic(picture){
  album.innerHTML += `<div class="mycard d-flex">
   <div class="mypic">
   <img src="${url}" alt="dolce">    
-    <span><img src="./assets/img/pin.svg" alt="pin"></span>
+    <span class="pin"><img src="./assets/img/pin.svg" alt="pin"></span>
   </div>
   <div class="mytext">${title}</div>  
 </div>`;  

@@ -48,10 +48,24 @@ const endpoint = 'https://jsonplaceholder.typicode.com/photos?_limit=6';
 
 const album = document.querySelector('.album')
 
+const overlay = document.getElementById('overlay');
+const btn = document.querySelector('.btn')
+
   axios.get(endpoint)
     .then(response =>{
       album.innerHTML = ''
-      response.data.forEach(picture => albumPic(picture))      
+      response.data.forEach(picture => albumPic(picture))
+      const cardPics = document.querySelectorAll('.mypic') 
+        for(let i = 0; i < cardPics.length; i++){
+        cardPics[i].addEventListener('click', function(){
+          overlay.classList.remove('d-none');
+          
+        })
+        btn.addEventListener('click', function(){
+          overlay.classList.add('d-none')
+        })
+        } 
+      console.log(cardPics);    
     })
 
 
@@ -65,16 +79,18 @@ function albumPic(picture){
   <img src="${url}" alt="dolce">    
     <span><img src="./assets/img/pin.svg" alt="pin"></span>
   </div>
-  <div class="mytext">${title}</div>
-  <div class="btn d-none">
-        <button type="button" class="btn btn-primary">Primary</button>
-      </div>
+  <div class="mytext">${title}</div>  
 </div>`;  
 }
 
 
-// const cardPic = document.querySelector('.mycard')
 
-// cardPic.addEventListener('click', function(){
-  
-// })
+ 
+
+
+ 
+// for(let i = 0; i < cardPics.length; i++){
+//   cardPic.addEventListener('click', function(){
+//     overlay.classList.toggle('.d-none');
+//   })
+// }

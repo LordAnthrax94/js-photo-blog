@@ -66,5 +66,15 @@ function albumPic(picture){
     <span><img src="./assets/img/pin.svg" alt="pin"></span>
   </div>
   <div class="mytext">${title}</div>
+  <div class="btn d-none">
+        <button type="button" class="btn btn-primary">Primary</button>
+      </div>
 </div>`;  
 }
+
+
+// const cardPic = document.querySelector('.mycard')
+
+// cardPic.addEventListener('click', function(){
+  
+// })

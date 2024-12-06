@@ -52,50 +52,43 @@ const overlay = document.getElementById('overlay');
 const btn = document.querySelector('.btn')
 const selpic = document.querySelector('.selpic')
 
-  axios.get(endpoint)
-    .then(response =>{
-      album.innerHTML = ''
-      response.data.forEach(picture => albumPic(picture))
-      
-      const cardPics = document.querySelectorAll('.mypic')
+btn.addEventListener('click', function(){
+  overlay.classList.add('d-none')
+})
 
-        // for(let i = 0; i < cardPics.length; i++){
-        //   cardPics[i].addEventListener('click', function(){
-        //     const {url} = picture;
-        //     overlay.classList.remove('d-none');
-        //     selpic.innerHTML = ` <img src="${url}" alt="dolce">`
-            
-        // })
-        // btn.addEventListener('click', function(){
-        //   btn.classList.add('d-none')
-        // })
-        // } 
-      console.log(cardPics);    
-    })
+// richiamiamo i 6 oggetti attraverso axios richiamando l'Api
+axios.get(endpoint)
+  .then(response =>{
+    album.innerHTML = ''
+    // iteriamo l'array dei dati ricevuti da axios e inviamo i dati alla funzione
+    response.data.forEach(picture => albumPic(picture))   
+  })
 
+ 
 
-
-
+//Creiamo la funzione che riceve l'oggetto 
 function albumPic(picture){
+  //destrutturiamo l'oggetto e salviamo i dati che servono
   const {title, url} = picture;
-
- album.innerHTML += `<div class="mycard d-flex">
-  <div class="mypic">
-  <img src="${url}" alt="dolce">    
-    <span class="pin"><img src="./assets/img/pin.svg" alt="pin"></span>
-  </div>
-  <div class="mytext">${title}</div>  
-</div>`;  
+  //Creiamo un elemento in HTML 
+  const mycard = document.createElement("div")
+  //Assegniamo le classi all'elemento
+  mycard.className = 'mycard d-flex'
+  //Popoliamo il contenuto dell'elemento e utilizziamo il template literal per richiamare
+  //le proprietà dell'oggetto
+  mycard.innerHTML = `
+    <div class="mypic">
+    <img src="${url}" alt="${title}">    
+      <span class="pin"><img src="./assets/img/pin.svg" alt="pin"></span>
+    </div>
+    <div class="mytext">${title}</div>  
+  `;  
+  //Stampiamo in pagina l'elemento completo
+  album.appendChild(mycard)
+  //Aggiungiamo un evento al click della card per attivare l'overlay
+  mycard.addEventListener('click', function(){    
+    overlay.classList.remove('d-none');
+    //Popolo l'elemento nell'overlay utilizzando sempre il template literal
+    selpic.innerHTML = `<img src="${url}" alt="${title}">`;    
+  })    
 }
-
-
-
- 
-
-
- 
-// for(let i = 0; i < cardPics.length; i++){
-//   cardPic.addEventListener('click', function(){
-//     overlay.classList.toggle('.d-none');
-//   })
-// }
